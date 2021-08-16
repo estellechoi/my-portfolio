@@ -130,10 +130,18 @@ table {
 
 /* Customized reset css */
 * {
+  box-sizing: border-box;
   scroll-behavior: smooth;
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+button,
+[type='button'],
+[type='submit'] {
+  outline: none;
 }
 
 ::-webkit-scrollbar {

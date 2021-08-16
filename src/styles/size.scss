@@ -1,6 +1,17 @@
 :root {
+  --padding-sm: 8px;
+  --padding-m: 12px;
+  --padding-ml: 16px;
+}
+
+:root {
   --padding-nav-v: 0;
-  --padding-nav-h: 10px;
+  --padding-nav-h: var(--padding-m);
   --padding-page-v: 60px;
-  --padding-page-h: 16px;
+  --padding-page-h: var(--padding-ml);
+}
+
+:root {
+  --size-navbar-h: 60px;
+  --size-icon-m: 32px;
 }
