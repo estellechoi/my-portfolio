@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+  --font-primary-kr: 'Noto Sans KR', sans-serif;
+  --font-primary-en: 'Overpass', sans-serif;
+}
+
+:root {
+  --font-size-m: 16px;
+  --font-size-m-rem: 1rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --line-height-base: 1.4;
+  --line-height-compact: 1;
+  --letter-spacing-p: -0.01em;
+  --letter-spacing-adjust: -0.02em;
+  --letter-spacing-narrow: -0.03em;
+}
