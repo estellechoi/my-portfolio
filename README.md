@@ -2,4 +2,4 @@
 
 ## Overview
 
-<img src="/docs/img/portfolio-project-overview-1.png" width="400" aria-hidden="true" />
+<img src="/docs/img/portfolio-project-overview-1.png" width="375" aria-hidden="true" />
