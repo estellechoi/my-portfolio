@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar flex justify-between items-center">
-    <div class="navbar__logo">soundglass</div>
+    <div class="navbar__logo">sunkiss</div>
     <ul class="hidden">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/about">About</router-link></li>
@@ -9,9 +9,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
-export default defineComponent({});
+export default defineComponent({})
 </script>
 
 <style scoped lang="scss">
@@ -31,7 +31,6 @@ export default defineComponent({});
   padding: var(--padding-nav-v) var(--padding-nav-h);
 
   .navbar__logo {
-    width: 100px;
     font-size: 34px;
     font-weight: var(--font-weight-bold);
     letter-spacing: var(--letter-spacing-narrow);
