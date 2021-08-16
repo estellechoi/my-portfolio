@@ -10,7 +10,7 @@
     <ul :class="['flex flex-col justify-center items-center', 'navbar-menu']">
       <li class="navbar-menu__item"><router-link to="/">Home</router-link></li>
       <li class="navbar-menu__item"
-        ><router-link to="/about">About</router-link></li
+        ><router-link to="/works">Works</router-link></li
       >
     </ul>
   </nav>
