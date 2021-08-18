@@ -36,6 +36,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+// @use "sass:math";
+
 .button {
   padding: 0 var(--padding-sm);
 
@@ -43,10 +45,10 @@ export default defineComponent({
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: var(--size-icon-m);
-    height: var(--size-icon-m);
+    width: var(--size-icon-m-w);
+    height: var(--size-icon-m-h);
 
     .top-bun,
     .patty,
@@ -55,6 +57,7 @@ export default defineComponent({
       width: 100%;
       height: 1px;
       background-color: var(--color-white);
+      transform-box: border-box;
       transition: transform 0.25s cubic-bezier(0.2, 0.6, 0.3, 1),
         width 0.25s cubic-bezier(0.2, 0.6, 0.3, 1),
         background-color var(--animation-duration-m);
@@ -71,10 +74,9 @@ export default defineComponent({
       }
 
       .top-bun {
-        transform: rotateZ(45deg);
+        transform: rotateZ(-45deg);
+        transform-origin: top right;
         transform-style: preserve-3d;
-        -webkit-transform-origin-x: left;
-        -webkit-transform-origin-y: top;
       }
 
       .patty {
@@ -82,10 +84,9 @@ export default defineComponent({
       }
 
       .bottom-bun {
-        transform: rotateZ(-45deg);
+        transform: rotateZ(45deg);
+        transform-origin: bottom right;
         transform-style: preserve-3d;
-        -webkit-transform-origin-x: left;
-        -webkit-transform-origin-y: top;
       }
     }
   }
