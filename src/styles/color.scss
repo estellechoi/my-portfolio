@@ -1,18 +1,35 @@
 :root {
   --color-white: #fff;
+  --color-white-050: rgba(255, 255, 255, 0.5);
+  --color-white-060: rgba(255, 255, 255, 0.65);
+  --color-white-090: rgba(255, 255, 255, 0.9);
   --color-black: #000;
-  --color-ivory: #f1ede6;
-  --color-yellow100: #f6dd90;
-  --color-yellow300: #fbdb48;
-  --color-yellow400: #fbd428;
-  --color-yellow500: #faca0f;
-  --color-yellow-o100: rgba(246, 221, 144, 0.41);
-  --color-yellow-o400: rgba(251, 212, 40, 0.41);
-  --color-pink400: #e7426b;
-  --color-pink-o400: rgba(231, 66, 107, 0.41);
+  --color-black-050: rgba(0, 0, 0, 0.5);
+  --color-black-060: rgba(0, 0, 0, 0.65);
+  --color-black-090: rgba(0, 0, 0, 0.9);
+  --color-yellow50: #fef8e0;
+  --color-yellow100: #fdecb0;
+  --color-yellow200: #fce17d;
+  --color-yellow300: #fad646;
+  --color-yellow400: #facb0f;
+  --color-yellow500: #fac200;
+  --color-yellow600: #fbb400;
+  --color-yellow700: #fca000;
+  --color-yellow800: #fd8f00;
+  --color-yellow900: #fe6e00;
+  --color-yellow50-o: rgba(254, 248, 224, 0.4);
+  --color-yellow100-o: rgba(253, 236, 176, 0.4);
+  --color-yellow200-o: rgba(252, 225, 125, 0.4);
+  --color-yellow300-o: rgba(250, 214, 70, 0.4);
+  --color-yellow400-o: rgba(250, 203, 15, 0.4);
+  --color-yellow500-o: rgba(250, 194, 0, 0.4);
+  --color-yellow600-o: rgba(251, 180, 0, 0.4);
+  --color-yellow700-o: rgba(252, 160, 0, 0.4);
+  --color-yellow800-o: rgba(253, 143, 0, 0.4);
+  --color-yellow900-o: rgba(254, 110, 0, 0.4);
 }
 
 :root {
-  --color-primary: var(--color-yellow400);
-  --color-primary-opacity: var(--color-yellow-o100);
+  --color-primary: var(--color-yellow500);
+  --color-primary-o: var(--color-yellow500-o);
 }
