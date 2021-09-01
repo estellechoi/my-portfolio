@@ -7,7 +7,7 @@
   >
     <div class="navbar__logo">estelle</div>
     <BurgerMenuButton @toggle="toggleNavMenu" />
-    <ul :class="['flex flex-col justify-center items-center', 'navbar-menu']">
+    <ul :class="['flex flex-col justify-start items-center', 'navbar-menu']">
       <li class="navbar-menu__item"><router-link to="/">Home</router-link></li>
       <li class="navbar-menu__item"
         ><router-link to="/works">Works</router-link></li
@@ -48,7 +48,7 @@ export default defineComponent({
   height: var(--size-navbar-h);
   z-index: 9999;
   color: var(--color-white);
-  background-color: var(--color-primary-opacity);
+  background-color: transparent;
   backdrop-filter: blur(6px) opacity(1);
   border-bottom: 1px solid var(--color-white);
   padding: var(--padding-nav-v) var(--padding-nav-h);
