@@ -19,6 +19,6 @@ export default defineComponent({
 <style lang="scss">
 #app {
   min-height: 100vh;
-  background-color: var(--color-ivory);
+  background-color: var(--color-white);
 }
 </style>
