@@ -2,6 +2,7 @@
 
 ## Overview
 
+<img src="/docs/img/portfolio-preview2.png" width="375" aria-hidden="true" />
 <img src="/docs/img/portfolio-preview.png" width="375" aria-hidden="true" />
 
 <br />
