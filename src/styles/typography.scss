@@ -90,3 +90,23 @@ $font-size-4xl: $type-scale-base + 32; /* 48 */
   font-weight: $font-weight-en-bold;
   letter-spacing: $letter-sp-narrow;
 }
+
+%typography-icon-label {
+  @include font-size($font-size-xs);
+  font-family: $font-primary-en;
+  font-weight: $font-weight-en-regular;
+}
+
+%typography-en-h3 {
+  @include font-size($font-size-l);
+  font-family: $font-primary-en;
+  font-weight: $font-weight-en-semibold;
+  letter-spacing: $letter-sp-adjust;
+}
+
+%typography-en-h3-subtitle {
+  @include font-size($font-size-s);
+  font-family: $font-primary-en;
+  font-weight: $font-weight-en-light;
+  letter-spacing: $letter-sp-p;
+}
