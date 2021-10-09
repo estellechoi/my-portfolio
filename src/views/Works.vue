@@ -1,14 +1,27 @@
 <template>
-  <MainPage class="page"> </MainPage>
+  <MainPage class="page">
+    <button @click="click">Popup</button>
+    <DonationPopup v-if="showDonationPopup" />
+  </MainPage>
 </template>
 
-<script lang="ts">
+<script lang="ts" scoped>
 import { defineComponent } from 'vue'
 import MainPage from '@/components/pages/MainPage.vue'
+import DonationPopup from '@/views/common/DonationPopup.vue'
 
 export default defineComponent({
-  name: 'home',
-  components: { MainPage },
+  components: { MainPage, DonationPopup },
+  data() {
+    return {
+      showDonationPopup: false,
+    }
+  },
+  methods: {
+    click() {
+      this.showDonationPopup = true
+    },
+  },
 })
 </script>
 
