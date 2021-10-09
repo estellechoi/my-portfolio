@@ -1,0 +1,7 @@
+@import 'typography.scss';
+@import 'animation.scss';
+@import 'functions.scss';
+
+:export {
+  global-app-header-animation-duration: $animation-duration-xs;
+}

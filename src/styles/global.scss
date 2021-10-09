@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'reset.scss';
+@import 'common.scss';
+@import 'color.scss';
+@import 'size.scss';
+@import 'modules.scss';
+
+html,
+body,
+code {
+  @extend %typography-base;
+}
+
+::selection {
+  color: var(--color-white);
+  background: var(--color-primary);
+}

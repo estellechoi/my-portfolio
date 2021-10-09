@@ -1,18 +1,40 @@
+/* All sizes */
 :root {
-  --padding-sm: 8px;
-  --padding-m: 12px;
-  --padding-ml: 16px;
+  --size-1: 4px;
+  --size-2: 8px;
+  --size-3: 12px;
+  --size-4: 16px;
+  --size-5: 20px;
+  --size-6: 24px;
+  --size-7: 28px;
+  --size-8: 32px;
+  --size-9: 36px;
+  --size-10: 40px;
+  --size-15: 60px;
 }
 
+/* 8pt grid sizes*/
 :root {
-  --padding-nav-v: 0;
-  --padding-nav-h: var(--padding-m);
-  --padding-page-v: 60px;
-  --padding-page-h: var(--padding-ml);
+  --size-horz1: var(--size-2);
+  --size-horz2: var(--size-4);
+  --size-horz3: var(--size-6);
+  --size-horz4: var(--size-8);
 }
 
+/* Special sizes */
 :root {
-  --size-navbar-h: 60px;
+  --size-header-h: var(--size-15);
+}
+
+/* Icon sizes*/
+:root {
   --size-icon-m-w: 32px;
   --size-icon-m-h: 24px;
+}
+/* Padding sizes */
+:root {
+  --padding-page-v-top: var(--size-6);
+  --padding-page-v-bottom: var(--size-header-h);
+  --padding-page-h-s: var(--size-horz2);
+  --padding-page-h-m: var(--size-horz3);
 }

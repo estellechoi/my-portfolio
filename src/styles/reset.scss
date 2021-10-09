@@ -91,6 +91,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -137,11 +138,31 @@ table {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
 a,
 button,
 [type='button'],
 [type='submit'] {
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+a,
+button,
+[type='button'],
+[type='submit'] {
+  cursor: pointer;
   outline: none;
+}
+
+a {
+  display: inline-block;
 }
 
 ::-webkit-scrollbar {

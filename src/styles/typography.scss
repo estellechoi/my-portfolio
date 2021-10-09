@@ -1,0 +1,92 @@
+@use "sass:math";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* Font family */
+$font-primary: 'Noto Sans KR', sans-serif;
+$font-primary-en: 'Overpass', sans-serif;
+
+/* Font weight */
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+$font-weight-en-thin: 100;
+$font-weight-en-extralight: 200;
+$font-weight-en-light: 300;
+$font-weight-en-regular: 400;
+$font-weight-en-semibold: 600;
+$font-weight-en-bold: 700;
+$font-weight-en-extrabold: 800;
+$font-weight-en-black: 900;
+
+/* Letter spacing */
+$letter-sp-p: -0.01em;
+$letter-sp-adjust: -0.02em;
+$letter-sp-narrow: -0.03em;
+
+/* Type scales roughly by 1.25 with base size 16 
+ * inspired by Major Third
+*/
+$type-scale-base: 16;
+$font-size-2xs: $type-scale-base - 8; /* 8 */
+$font-size-xs: $type-scale-base - 6; /* 10 */
+$font-size-s: $type-scale-base - 4; /* 12 */
+$font-size-m: $type-scale-base; /* 16 */
+$font-size-l: $type-scale-base + 4; /* 20 */
+$font-size-xl: $type-scale-base + 8; /* 24 */
+$font-size-2xl: $type-scale-base + 16; /* 32 */
+$font-size-3xl: $type-scale-base + 24; /* 40 */
+$font-size-4xl: $type-scale-base + 32; /* 48 */
+
+/* get-line-height 
+ * $font-size: int 
+*/
+@function get-line-height($font-size) {
+  @if $font-size == 8 {
+    @return 2;
+  } @else if $font-size == 10 {
+    @return 2;
+  } @else if $font-size == 12 {
+    @return 2;
+  } @else if $font-size == 20 {
+    @return 1.4;
+  } @else {
+    @return 1.5;
+  }
+}
+
+/* $size: int */
+@mixin font-size($size) {
+  font-size: $size * 1px;
+  font-size: math.div($size, 16) * 1rem;
+  line-height: get-line-height($size);
+}
+
+/* Typography system 
+ * built with %(Placeholder Selector) not to be included in the CSS output 
+ * for more information about %, see https://sass-lang.com/documentation/style-rules/placeholder-selectors
+*/
+%typography-base {
+  @include font-size($font-size-m);
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+}
+
+%typography-logo {
+  @include font-size($font-size-2xl);
+  font-family: $font-primary-en;
+  font-weight: $font-weight-en-bold;
+  letter-spacing: $letter-sp-narrow;
+}
+
+%typography-menu-item {
+  @include font-size($font-size-3xl);
+  font-family: $font-primary-en;
+  font-weight: $font-weight-en-bold;
+  letter-spacing: $letter-sp-narrow;
+}

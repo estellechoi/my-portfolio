@@ -1,0 +1,17 @@
+.alt {
+  /* 레이아웃에 영향을 끼치지 않도록 */
+  position: absolute;
+  /* 스크린 리더가 읽을 수 있도록 */
+  width: 1px;
+  height: 1px;
+  /* 눈에 보이는 부분을 제거 */
+  /*
+    clip: rect(top right bottom left);
+    직사각형 모양대로 요소를 잘라내는 속성
+    position 속성 값이 absolute 혹은 fixed인 요소여야 한다.
+    overflow 속성 값이 visible일 경우에는 적용이 되지 않는다.
+  */
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+}

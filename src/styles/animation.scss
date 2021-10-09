@@ -1,5 +1,18 @@
-:root {
-  --animation-duration-xs: 0.25s;
-  --animation-duration-s: 0.4s;
-  --animation-duration-m: 0.65s;
+$animation-duration-xs: 0.25s;
+$animation-duration-s: 0.4s;
+$animation-duration-m: 0.65s;
+
+@mixin animation-fade-in($duration: $animation-duration-s, $delay: 0) {
+  animation: fade-in $duration $delay both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

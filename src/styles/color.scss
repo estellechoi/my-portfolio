@@ -1,3 +1,4 @@
+/* All palette */
 :root {
   --color-white: #fff;
   --color-white-050: rgba(255, 255, 255, 0.5);
@@ -29,7 +30,10 @@
   --color-yellow900-o: rgba(254, 110, 0, 0.4);
 }
 
+/* Primary palette */
 :root {
   --color-primary: var(--color-yellow500);
   --color-primary-o: var(--color-yellow500-o);
+  --color-primary-light: var(--color-yellow50);
+  --color-primary-light-o: var(--color-yellow50-o);
 }
