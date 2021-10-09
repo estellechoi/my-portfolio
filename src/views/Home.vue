@@ -1,22 +1,21 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png" class="flex justify-center" /> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-  </div>
+  <MainPage class="page"> </MainPage>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import MainPage from '@/components/pages/MainPage.vue'
 
 export default defineComponent({
-  name: 'Home',
+  name: 'home',
+  components: { MainPage },
 })
 </script>
 
 <style lang="scss" scoped>
 @import '@/styles/modules.scss';
 
-.home {
+.page {
   min-height: 100vh;
   background-color: var(--color-white);
   background-image: url(./../assets/bg/bg-me-in-paris.jpeg);
@@ -24,6 +23,5 @@ export default defineComponent({
   background-size: cover;
   background-position-x: 40%;
   background-attachment: scroll;
-  padding: var(--size-header-h) var(--padding-page-h-s);
 }
 </style>
