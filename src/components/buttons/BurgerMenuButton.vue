@@ -1,6 +1,11 @@
 <template>
-  <button type="button" class="button" @click="toggleActive">
-    <div :class="['burger', active ? 'active' : '']">
+  <button
+    type="button"
+    class="button"
+    :aria-label="actionLabel"
+    @click="toggleActive"
+  >
+    <div :class="['burger', active ? 'active' : '']" aria-hidden="true">
       <div class="top-bun"></div>
       <div class="patty"></div>
       <div class="bottom-bun"></div>
@@ -13,33 +18,40 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'Burger Menu Button',
-  data() {
-    return {
-      active: false,
-    }
+  props: {
+    label: {
+      type: String,
+      default: '',
+    },
+    active: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    actionLabel() {
+      return this.active ? `Close ${this.label}` : `Check ${this.label}`
+    },
   },
   emits: {
     toggle(payload: { active: boolean }) {
       return payload.active
     },
   },
-  mounted() {
-    console.log('Burger ...', this)
-  },
   methods: {
     toggleActive(): void {
-      this.active = !this.active
-      this.$emit('toggle', { active: this.active })
+      this.$emit('toggle', { active: !this.active })
     },
   },
 })
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/modules.scss';
 // @use "sass:math";
 
 .button {
-  padding: 0 var(--padding-sm);
+  padding: 0 var(--size-horz1);
 
   .burger {
     position: relative;
@@ -59,18 +71,15 @@ export default defineComponent({
       background-color: var(--color-white);
       transform-box: border-box;
       transition: transform 0.25s cubic-bezier(0.2, 0.6, 0.3, 1),
-        width 0.25s cubic-bezier(0.2, 0.6, 0.3, 1),
-        background-color var(--animation-duration-m);
+        width 0.25s cubic-bezier(0.2, 0.6, 0.3, 1) background-color 0.4s;
     }
 
     &.active {
       .top-bun,
       .patty,
       .bottom-bun {
-        background-color: var(--color-black);
         transition: transform 0.25s cubic-bezier(0.2, 0.6, 0.3, 1),
-          width 0.25s cubic-bezier(0.2, 0.6, 0.3, 1),
-          background-color var(--animation-duration-xs);
+          width 0.25s cubic-bezier(0.2, 0.6, 0.3, 1);
       }
 
       .top-bun {

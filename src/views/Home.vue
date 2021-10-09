@@ -14,6 +14,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/modules.scss';
+
 .home {
   min-height: 100vh;
   background-color: var(--color-white);
@@ -22,6 +24,6 @@ export default defineComponent({
   background-size: cover;
   background-position-x: 40%;
   background-attachment: scroll;
-  padding: var(--padding-page-v) var(--padding-page-h);
+  padding: var(--size-header-h) var(--padding-page-h-s);
 }
 </style>

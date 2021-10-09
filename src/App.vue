@@ -1,22 +1,24 @@
 <template>
   <div>
-    <NavBar />
+    <AppHeader />
     <router-view />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import NavBar from '@/views/nav/NavBar.vue'
+import AppHeader from '@/views/common/AppHeader.vue'
 
 export default defineComponent({
   components: {
-    NavBar,
+    AppHeader,
   },
 })
 </script>
 
 <style lang="scss">
+@import '@/styles/modules.scss';
+
 #app {
   min-height: 100vh;
   background-color: var(--color-white);
