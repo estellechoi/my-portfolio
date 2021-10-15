@@ -37,7 +37,12 @@
           :key="`sns-link-${index + 1}`"
           :class="['flex-none', 'sns-links-item']"
         >
-          <a :href="item.href" :title="item.label" target="_blank">
+          <a
+            class="flex justify-center items-center"
+            :href="item.href"
+            :title="item.label"
+            target="_blank"
+          >
             <img :src="item.iconSrc" :alt="item.label" aria-hidden="true" />
           </a>
         </li>
@@ -147,7 +152,7 @@ export default defineComponent({
   }
 
   .nav {
-    position: fixed;
+    position: absolute;
     top: var(--size-header-h);
     left: 0;
     width: 100vw;
@@ -157,8 +162,9 @@ export default defineComponent({
     backdrop-filter: blur(6px) opacity(1);
     opacity: 0;
     z-index: -1;
-    padding: var(--padding-page-v-top) var(--padding-page-h-m)
-      var(--padding-page-v-bottom);
+    padding: var(--padding-page-v-top) var(--padding-page-h-m) calc((2 * var(--padding-page-v-top)) + var(--size-9));
+    overflow: hidden auto;
+    pointer-events: none;
     transition: all $animation-duration-xs;
 
     .nav__item {
@@ -188,6 +194,7 @@ export default defineComponent({
 
     .sns-links-item {
       width: var(--size-9);
+      height: var(--size-9);
       padding: var(--size-1);
 
       > a {
@@ -210,6 +217,7 @@ export default defineComponent({
     .nav {
       opacity: 1;
       z-index: 0;
+      pointer-events: initial;
     }
   }
 }
