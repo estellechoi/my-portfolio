@@ -191,7 +191,10 @@ export default defineComponent({
     left: 0;
     width: 100%;
     padding: var(--padding-page-v-top) var(--padding-page-h-m);
-    @include animation-fade-in-up($animation-duration-s, $animation-duration-xs);
+    @include animation-fade-in-up(
+      $animation-duration-s,
+      $animation-duration-xs
+    );
 
     .sns-links-item {
       width: var(--size-9);
