@@ -2,11 +2,11 @@ $animation-duration-xs: 0.25s;
 $animation-duration-s: 0.4s;
 $animation-duration-m: 0.65s;
 
-@mixin animation-fade-in($duration: $animation-duration-s, $delay: 0) {
-  animation: fade-in $duration $delay both;
+@mixin animation-fade-in-up($duration: $animation-duration-s, $delay: 0) {
+  animation: fade-in-up $duration $delay both;
 }
 
-@keyframes fade-in {
+@keyframes fade-in-up {
   0% {
     opacity: 0;
     transform: translateY(4px);

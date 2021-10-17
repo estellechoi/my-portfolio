@@ -4,5 +4,6 @@
 @import 'functions.scss';
 
 :export {
-  global-app-header-animation-duration: $animation-duration-xs;
+  global-animation-duration-xs: $animation-duration-xs;
+  global-animation-duration-s: $animation-duration-s;
 }
