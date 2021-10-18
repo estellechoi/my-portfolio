@@ -16,12 +16,9 @@
         <slot />
       </div>
 
-      <button
-        ref="closeBtn"
-        type="button"
-        class="popup__close-btn"
-        aria-label="No thanks, close the dialog."
-      ></button>
+      <button ref="closeBtn" type="button" :class="['mt-8', 'popup__close-btn']"
+        >No thanks, close the dialog.</button
+      >
     </div>
   </div>
 </template>
@@ -135,18 +132,27 @@ export default defineComponent({
   transition: opacity $animation-duration-s $animation-duration-xs;
 
   .popup {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
     background: var(--color-white);
-    padding: var(--padding-page-v-top) var(--padding-page-h-s);
+    padding: var(--padding-popup-v-top) var(--padding-page-h-s)
+      var(--padding-popup-v-bottom);
     border-top-left-radius: var(--radius-l);
     border-top-right-radius: var(--radius-l);
     box-shadow: $box-shadow-base;
     animation: popup-from-bottom $animation-duration-s $animation-duration-xs
       both;
+
+    .popup__close-btn {
+      @extend %typography-btn-s;
+      display: block;
+      color: var(--color-brown700);
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &.dismissed {
