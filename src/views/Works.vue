@@ -1,7 +1,7 @@
 <template>
   <MainPage class="page">
     <button @click="click">Popup</button>
-    <DonationPopup v-if="showDonationPopup" />
+    <DonationPopup :active="showDonationPopup" />
   </MainPage>
 </template>
 
@@ -17,9 +17,12 @@ export default defineComponent({
       showDonationPopup: false,
     }
   },
+  mounted() {
+    this.click()
+  },
   methods: {
     click() {
-      this.showDonationPopup = true
+      this.showDonationPopup = !this.showDonationPopup
     },
   },
 })

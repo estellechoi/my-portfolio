@@ -120,7 +120,7 @@ export default defineComponent({
       this.$router.push({ path: to })
     },
     getAnimationDelayByIndex(index: number): string {
-      const delay: string = styles['global-app-header-animation-duration']
+      const delay: string = styles['global-animation-duration-xs']
       const delayNumber = Number(delay.split('s')[0])
       return `animation-delay: ${delayNumber * (index + 1)}s`
     },
@@ -162,7 +162,8 @@ export default defineComponent({
     backdrop-filter: blur(6px) opacity(1);
     opacity: 0;
     z-index: -1;
-    padding: var(--padding-page-v-top) var(--padding-page-h-m) calc((2 * var(--padding-page-v-top)) + var(--size-9));
+    padding: var(--padding-page-v-top) var(--padding-page-h-m)
+      calc((2 * var(--padding-page-v-top)) + var(--size-9));
     overflow: hidden auto;
     pointer-events: none;
     transition: all $animation-duration-xs;
@@ -172,7 +173,7 @@ export default defineComponent({
       text-align: right;
 
       > a {
-        @include animation-fade-in(
+        @include animation-fade-in-up(
           $animation-duration-s,
           $animation-duration-xs
         );
@@ -190,7 +191,10 @@ export default defineComponent({
     left: 0;
     width: 100%;
     padding: var(--padding-page-v-top) var(--padding-page-h-m);
-    @include animation-fade-in($animation-duration-s, $animation-duration-xs);
+    @include animation-fade-in-up(
+      $animation-duration-s,
+      $animation-duration-xs
+    );
 
     .sns-links-item {
       width: var(--size-9);
