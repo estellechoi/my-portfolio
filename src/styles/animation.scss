@@ -1,12 +1,44 @@
 $animation-duration-xs: 0.25s;
 $animation-duration-s: 0.4s;
 $animation-duration-m: 0.65s;
+$animation-duration-l: 0.8s;
 
-@mixin animation-fade-in($duration: $animation-duration-s, $delay: 0) {
+$animation-timing-function-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+$animation-timing-function-ease-out-x: cubic-bezier(0, 0.7, 0.29, 0.97);
+$animation-timing-function-ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+@mixin animation-fade-in($duration: $animation-duration-s, $delay: 0s) {
   animation: fade-in $duration $delay both;
 }
 
+@mixin animation-fade-out($duration: $animation-duration-s, $delay: 0s) {
+  animation: fade-out $duration $delay both;
+}
+
+@mixin animation-fade-in-up($duration: $animation-duration-s, $delay: 0s) {
+  animation: fade-in-up $duration $animation-timing-function-ease-out $delay
+    both;
+}
+
 @keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-up {
   0% {
     opacity: 0;
     transform: translateY(4px);

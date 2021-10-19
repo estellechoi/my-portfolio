@@ -1,9 +1,15 @@
 <template>
-  <BottomPopup>
-    <h3 :class="['text-center', 'donation-title']"
+  <BottomPopup
+    :active="active"
+    :aria-labelledby="'dialog-donation-popup-title'"
+    :aria-describedby="'dialog-donation-popup-p'"
+  >
+    <h3
+      id="dialog-donation-popup-title"
+      :class="['text-center', 'donation-title']"
       >Would like to donate to Estelle?</h3
     >
-    <p :class="['text-center mb-8', 'donation-p']"
+    <p id="dialog-donation-popup-p" :class="['text-center mb-8', 'donation-p']"
       >Click and copy Estelle's address.</p
     >
     <ul class="flex justify-center items-center">
@@ -14,18 +20,20 @@
             'flex flex-col justify-center items-stretch',
             'coin-item__button',
           ]"
-          :aria-label="`Donate with ${item.label}`"
+          :aria-label="`Copy Estelle's ${item.name} address.`"
           @click="() => handleCoinClick(item)"
         >
           <img
             :src="item.iconSrc"
-            :alt="item.label"
+            :alt="`${item.name} icon`"
             :class="[
               'flex justify-center items-center mb-1',
               'coin-item__icon',
             ]"
           />
-          <span class="coin-item__label">{{ item.label }}</span>
+          <span class="coin-item__label" aria-hidden="true">{{
+            item.label
+          }}</span>
         </button>
       </li>
     </ul>
@@ -45,6 +53,12 @@ interface CoinItem {
 
 export default defineComponent({
   components: { BottomPopup },
+  props: {
+    active: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       coinList: [

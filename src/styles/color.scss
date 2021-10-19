@@ -1,13 +1,25 @@
 /* All palette */
 :root {
   --color-white: #fff;
+  --color-white-030: rgba(255, 255, 255, 0.3);
   --color-white-050: rgba(255, 255, 255, 0.5);
   --color-white-060: rgba(255, 255, 255, 0.65);
   --color-white-090: rgba(255, 255, 255, 0.9);
   --color-black: #000;
+  --color-black-030: rgba(0, 0, 0, 0.3);
   --color-black-050: rgba(0, 0, 0, 0.5);
   --color-black-060: rgba(0, 0, 0, 0.65);
   --color-black-090: rgba(0, 0, 0, 0.9);
+  --color-brown50: #fffbee;
+  --color-brown100: #fdf6e9;
+  --color-brown200: #f8f1e5;
+  --color-brown300: #eee8db;
+  --color-brown400: #ccc6ba;
+  --color-brown500: #aea89c;
+  --color-brown600: #847e73;
+  --color-brown700: #6f6a5f;
+  --color-brown800: #4f4a40;
+  --color-brown900: #2d281f;
   --color-yellow50: #fef8e0;
   --color-yellow100: #fdecb0;
   --color-yellow200: #fce17d;

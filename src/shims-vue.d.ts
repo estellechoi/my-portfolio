@@ -7,6 +7,9 @@ declare module '*.vue' {
 
 declare module '*.scss' {
   export default {
-    'global-app-header-animation-duration': string
+    'global-animation-duration-xs': string,
+    'global-animation-duration-s': string,
+    'global-animation-duration-m': string,
+    'global-animation-duration-l': string
   }
 }
