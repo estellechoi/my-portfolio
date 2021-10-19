@@ -102,7 +102,6 @@ $font-size-4xl: $type-scale-base + 32; /* 48 */
   font-family: $font-primary-en;
   font-weight: $font-weight-en-light;
   letter-spacing: $letter-sp-narrow;
-  text-decoration: underline;
 }
 
 %typography-en-h3 {
@@ -115,6 +114,6 @@ $font-size-4xl: $type-scale-base + 32; /* 48 */
 %typography-en-h3-subtitle {
   @include font-size($font-size-s);
   font-family: $font-primary-en;
-  font-weight: $font-weight-en-light;
+  font-weight: $font-weight-en-regular;
   letter-spacing: $letter-sp-p;
 }
