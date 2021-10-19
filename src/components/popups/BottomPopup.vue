@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="show"
-    :class="['popup-wrapper', dismissed ? 'dismissed' : '']"
+    :class="['popup-wrapper', dismissed ? 'popup-wrapper--dismissed' : '']"
     @click="dismissPopup"
   >
     <div
@@ -11,23 +11,29 @@
       :aria-labelledby="ariaLabelledby"
       :aria-describedby="ariaDescribedby"
       :aria-hidden="!show || dismissed"
+      @click="handlePopupClick"
     >
       <div ref="document" role="document">
         <slot />
       </div>
 
-      <button ref="closeBtn" type="button" :class="['mt-8', 'popup__close-btn']"
-        >No thanks, close the dialog.</button
-      >
+      <DismissButton
+        ref="closeBtn"
+        class="mt-8"
+        :label="'No thanks, close the dialog.'"
+        @click="dismissPopup"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts" scoped>
 import { defineComponent } from 'vue'
+import DismissButton from '@/components/buttons/DismissButton.vue'
 import styles from '@/styles/modules.scss'
 
 export default defineComponent({
+  components: { DismissButton },
   props: {
     active: {
       type: Boolean,
@@ -92,6 +98,9 @@ export default defineComponent({
         el.focus()
       }
     },
+    handlePopupClick(evt: PointerEvent) {
+      evt.stopPropagation()
+    },
     showPopup() {
       this.show = true
       const el = this.$refs.document as HTMLElement
@@ -101,9 +110,9 @@ export default defineComponent({
       this.dismissed = true
 
       const duration1 =
-        Number(styles['global-animation-duration-s'].split('s')[0]) * 1000
+        Number(styles['global-animation-duration-m'].split('s')[0]) * 1000
       const duration2 =
-        Number(styles['global-animation-duration-xs'].split('s')[0]) * 1000
+        Number(styles['global-animation-duration-s'].split('s')[0]) * 1000
       const totalDuration = duration1 + duration2
 
       window.setTimeout(() => {
@@ -129,7 +138,7 @@ export default defineComponent({
   width: 100vw;
   height: 100vh;
   background: var(--color-black-030);
-  transition: opacity $animation-duration-s $animation-duration-xs;
+  @include animation-fade-in($animation-duration-m, 0s);
 
   .popup {
     position: fixed;
@@ -143,23 +152,16 @@ export default defineComponent({
     border-top-left-radius: var(--radius-l);
     border-top-right-radius: var(--radius-l);
     box-shadow: $box-shadow-base;
-    animation: popup-from-bottom $animation-duration-s $animation-duration-xs
-      both;
-
-    .popup__close-btn {
-      @extend %typography-btn-s;
-      display: block;
-      color: var(--color-brown700);
-      margin-left: auto;
-      margin-right: auto;
-    }
+    animation: popup-from-bottom $animation-duration-m
+      $animation-timing-function-ease-out $animation-duration-xs both;
   }
 
-  &.dismissed {
-    opacity: 0;
+  &.popup-wrapper--dismissed {
+    @include animation-fade-out($animation-duration-m, $animation-duration-s);
 
     .popup {
-      animation: popup-dismissed $animation-duration-s both;
+      animation: popup-dismissed $animation-duration-l
+        $animation-timing-function-ease-in 0s both;
     }
   }
 }
