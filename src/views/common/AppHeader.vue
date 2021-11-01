@@ -74,12 +74,12 @@ export default defineComponent({
       showNavMenu: false,
       menuList: [
         {
-          label: 'Home',
-          to: '/',
+          label: 'What we do',
+          to: '/what-we-do',
         },
         {
           label: 'About',
-          to: '/about',
+          to: '/',
         },
         {
           label: 'Works',
@@ -104,7 +104,7 @@ export default defineComponent({
         },
         {
           label: 'Medium profile',
-          href: 'https://medium.com/@estele.choi',
+          href: 'https://medium.com/@estelle.choi',
           iconSrc: require('@/assets/icons/icon-sns-medium-white.svg'),
         },
       ],
@@ -120,7 +120,7 @@ export default defineComponent({
       this.$router.push({ path: to })
     },
     getAnimationDelayByIndex(index: number): string {
-      const delay: string = styles['global-animation-duration-xs']
+      const delay: string = styles['global-animation-duration-s']
       const delayNumber = Number(delay.split('s')[0])
       return `animation-delay: ${delayNumber * (index + 1)}s`
     },
@@ -166,20 +166,33 @@ export default defineComponent({
       calc((2 * var(--padding-page-v-top)) + var(--size-9));
     overflow: hidden auto;
     pointer-events: none;
-    transition: all $animation-duration-xs;
+    transition: all $animation-duration-xs $animation-timing-function-ease-in-x;
 
     .nav__item {
       @extend %typography-menu-item;
-      text-align: right;
+      text-align: left;
+
+      &:not(:last-child) {
+        margin-bottom: var(--size-1);
+      }
 
       > a {
+        position: relative;
         @include animation-fade-in-up(
-          $animation-duration-s,
+          $animation-duration-xl,
           $animation-duration-xs
         );
 
-        &:hover {
-          text-decoration: underline;
+        &:hover::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: var(--color-white);
+          @include animation-scaling-out-underline;
         }
       }
     }
@@ -209,6 +222,7 @@ export default defineComponent({
           width: 100%;
           height: 100%;
           object-fit: contain;
+          pointer-events: none;
         }
       }
     }

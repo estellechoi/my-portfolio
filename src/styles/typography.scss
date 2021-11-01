@@ -2,10 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
 /* Font family */
 $font-primary: 'Noto Sans KR', sans-serif;
 $font-primary-en: 'Overpass', sans-serif;
+$font-family-secondary: 'DM Serif Display', serif;
 
 /* Font weight */
 $font-weight-thin: 100;
@@ -79,8 +81,8 @@ $font-size-4xl: $type-scale-base + 32; /* 48 */
 
 %typography-logo {
   @include font-size($font-size-2xl);
-  font-family: $font-primary-en;
-  font-weight: $font-weight-en-bold;
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-regular;
   letter-spacing: $letter-sp-narrow;
 }
 
